@@ -3,7 +3,7 @@ package is.ru.stringCalculator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class CalculatorTest{
+public class calculatorTest{
 
 	@Test
 	public void testEmptyString(){
