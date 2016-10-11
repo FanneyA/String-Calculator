@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 
  javac -classpath "classes/;lib/junit-4.11.jar" src/Test/java/is/ru/stringcalculator/*.java -d classes
