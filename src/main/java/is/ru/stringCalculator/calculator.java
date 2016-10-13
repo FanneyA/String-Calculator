@@ -1,22 +1,28 @@
 package is.ru.stringCalculator;
 
+
+import java.util.ArrayList;
+
 public class calculator {
 
 	public static int add(String text){
 
 		if(text.equals(""))
+			
 			return 0;
-		else if(text.contains(",")) {
+
+		else if(text.contains(",")) 
+		{
 
 			return sum(splitNumbers(text));
 
-			}
-		else if(text.contains("\n")) {
+		}
+		else if(text.contains("\n")) 
+		{
 
 			return sum(splitNumbers(text));
-
-			}
-			else
+		}
+		else
 
 			return 1;
 	}
@@ -30,15 +36,31 @@ public class calculator {
 
 	}
 	private static int sum(String[] numbers){
+		
 		int total=0;
 
+		ArrayList<Integer> ifNegative = new ArrayList<Integer>();
+
 		for(String number : numbers){
-			if(Integer.parseInt(number) < 1000)
+			
+			if(Integer.parseInt(number) >=0)
 			{
+
 				total += Integer.parseInt(number);
-				//throw new exception("Negatives not allowed: " + Integer.parseInt(number));
+
 			}
+			if(Integer.parseInt(number) < 0)
+			{
+
+				ifNegative.add(Integer.parseInt(number));
+			}
+			
+             
 		}
+		if(ifNegative.size()>0)
+			{
+				throw new RuntimeException("Negatives not allowed: " + ifNegative.toString());
+			}
 		return total;
 
 	}
