@@ -31,17 +31,12 @@ public class calculatorTest {
 	public void testNumbersByNewLine(){
 		assertEquals(6,calculator.add("1,2\n3"));
     }
-    /*  @Test 
+      @Test 
     public void biggerTHanThousand() {
 
     	assertEquals(19,calculator.add("3,1000,1001,6,10"));
 
-    }*/
-    /* @Test 
-	public void throwException(){
-
-		calculator.add("1,2,-3,4,-5");
-	}*/
+    }
 	@Test
     public void IfNegativeNumbers() {
 
@@ -50,7 +45,7 @@ public class calculatorTest {
     try {
             calculator.add("1,2.-3,4,-5");
 
-    } catch (Exception e) {
+    	} catch (Exception e) {
 
         exception = e;
     }

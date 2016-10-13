@@ -40,27 +40,29 @@ public class calculator {
 		int total=0;
 
 		ArrayList<Integer> ifNegative = new ArrayList<Integer>();
+		
+	for(String number : numbers){
 
-		for(String number : numbers){
-			
-			if(Integer.parseInt(number) >=0)
-			{
+		
+		if(Integer.parseInt(number) >=0 && Integer.parseInt(number) <1000)
+		{
 
-				total += Integer.parseInt(number);
+			total += Integer.parseInt(number);
 
-			}
-			if(Integer.parseInt(number) < 0)
-			{
+		}
+		if(Integer.parseInt(number) < 0)
+		{
 
-				ifNegative.add(Integer.parseInt(number));
-			}
-			
-             
+			ifNegative.add(Integer.parseInt(number));
+		}
+		
+         
 		}
 		if(ifNegative.size()>0)
-			{
-				throw new RuntimeException("Negatives not allowed: " + ifNegative.toString());
-			}
+		{
+			throw new RuntimeException("Negatives not allowed: " + ifNegative.toString());
+		}
+		
 		return total;
 
 	}
